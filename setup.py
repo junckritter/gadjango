@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup, find_packages
+from distutils.core import setup
 
 setup(name='GADjango',
       version='0.0.1',
@@ -8,5 +8,6 @@ setup(name='GADjango',
       author='Tomas Sirny',
       author_email='tsirny@gmail.com',
       url='https://github.com/junckritter/gadjango',
-      packages=find_packages(),
+      packages=['gadjango'],
+      package_data = { 'gadjango': [ 'templates/gadjango/*.html']},
      )
