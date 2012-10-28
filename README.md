@@ -12,12 +12,13 @@ Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails g
 2. **Add middleware to your settings**
     
         MIDDLEWARE_CLASSES = (
-        'gadjango.middleware.TimingMiddleware',
+            'gadjango.middleware.TimingMiddleware',
             ...
             ...
-        )    
+        )
     
-3. **Include HTML template in Google Analytics JavaScript element **
+
+3. **Include _timing.html_ template into Google Analytics JavaScript element**
     
         <script type="text/javascript">
             var _gaq = _gaq || [];
