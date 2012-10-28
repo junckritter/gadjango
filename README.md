@@ -1,6 +1,6 @@
 # Django app for Performance Monitoring with Google Analytics
 
-Send perfomance data to Google Analytics, you can view it in Content > Site Speed > User Timings.
+Send perfomance data to Google Analytics, you can view it in Content > Site Speed > User Timings.  
 Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails gem</a> by Jan Suchal.
 
 ## Installation.
@@ -17,7 +17,7 @@ Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails g
             ...
         )    
     
-3. **Include HTML template in Google Analytics JavaScript element 
+3. **Include HTML template in Google Analytics JavaScript element **
     
         <script type="text/javascript">
             var _gaq = _gaq || [];
