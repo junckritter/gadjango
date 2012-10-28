@@ -6,9 +6,11 @@ Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails g
 ## Installation.
 
 1. **Download**
+    
     pip install git+https://github.com/junckritter/gadjango
 
 2. **Add middleware to your settings**
+    
     MIDDLEWARE_CLASSES = (
        'gadjango.middleware.TimingMiddleware',
         ...
@@ -16,6 +18,7 @@ Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails g
     )    
     
 3. **Include HTML template in Google Analytics JavaScript element 
+    
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
