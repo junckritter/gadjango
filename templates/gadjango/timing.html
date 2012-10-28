@@ -1,0 +1,5 @@
+_gaq.push(['_setSiteSpeedSampleRate', 100]);
+{% for stat in ga_stats %}
+    _gaq.push(['_trackTiming', '{{stat.category}}', '{{stat.view}}', {{stat.time}}, '{{stat.label}}']);
+{% endfor %}
+
