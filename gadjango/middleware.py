@@ -24,13 +24,13 @@ class TimingMiddleware(object):
             {
                 'category': 'Django View',
                 'label': 'view_time',
-                'time': (now - self._start_view_time) * 1000,
+                'time': int((now - self._start_view_time) * 1000),
                 'view': self._view_name
             },
             {
                 'category': 'Django View',
                 'label': 'total_time',
-                'time': (now - self._start_total_time) * 1000,
+                'time': int((now - self._start_total_time) * 1000),
                 'view': self._view_name
             }
         ]
