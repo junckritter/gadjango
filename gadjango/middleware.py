@@ -2,7 +2,10 @@
 Midllewares
 """
 
+import subprocess
 import time
+
+GIT_VERSION = subprocess.check_output('git log --pretty=format:"%cd %h" --date=iso -1 2>/dev/null', shell=True)
 
 class TimingMiddleware(object):
     """
@@ -34,6 +37,6 @@ class TimingMiddleware(object):
                 'view': request._view_name
             }
         ]
-        response.context_data.update({'ga_stats': stats})
+        response.context_data.update({'ga_stats': stats, 'git_version': GIT_VERSION})
         return response
 

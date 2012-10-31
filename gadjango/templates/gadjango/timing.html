@@ -1,4 +1,5 @@
 _gaq.push(['_setSiteSpeedSampleRate', 100]);
+    _gaq.push(['_setCustomVar', 5, 'GIT version', '{{git_version}}', 3]);
 {% for stat in ga_stats %}
     _gaq.push(['_trackTiming', '{{stat.category}}', '{{stat.label}}', {{stat.time}}, '{{stat.view}}']);
 {% endfor %}
