@@ -1,8 +1,10 @@
 """
 Midllewares
 """
-
 import time
+
+from db_handler import get_db_stats
+
 
 class TimingMiddleware(object):
     """
@@ -16,7 +18,6 @@ class TimingMiddleware(object):
         self._start_view_time = time.time()
         self._view_name = view_func.__name__
         return None
-
 
     def process_template_response(self, request, response):
         now = time.time()
@@ -34,6 +35,16 @@ class TimingMiddleware(object):
                 'view': self._view_name
             }
         ]
+
+        db_stats = get_db_stats()
+        if db_stats:
+            for item in db_stats:
+                stats.append({
+                    'category': 'Django DB',
+                    'label': 'sql',
+                    'time': item['time'],
+                    'view': item['sql']
+                })
+
         response.context_data.update({'ga_stats': stats})
         return response
-
