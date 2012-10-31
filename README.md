@@ -17,8 +17,16 @@ Heavily inspired by <a href="https://github.com/jsuchal/garelic">Garelic Rails g
             ...
         )
     
+3. **Add GADjango to INSTALLED_APPS**
 
-3. **Include _timing.html_ template into Google Analytics JavaScript element**
+        INSTALLED_APPS = (
+            ...,
+            gadjango,
+            ...,
+        )
+
+
+4. **Include _timing.html_ template into Google Analytics JavaScript element**
     
         <script type="text/javascript">
             var _gaq = _gaq || [];
