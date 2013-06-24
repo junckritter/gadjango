@@ -1,4 +1,21 @@
-_gaq.push(['_setSiteSpeedSampleRate', 100]);
-{% for stat in ga_stats %}
-    _gaq.push(['_trackTiming', '{{stat.category}}', '{{stat.label}}', {{stat.time}}, '{{stat.view}}']);
-{% endfor %}
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3997329-10']);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['_setSiteSpeedSampleRate', 100]);
+
+    {% autoescape off %}
+    {% for stat in ga_stats %}
+        _gaq.push(['_trackTiming', '{{stat.category}}', '{{stat.label}}', {{stat.time}}, '{{stat.view}}']);
+    {% endfor %}
+    {% endautoescape %}
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
